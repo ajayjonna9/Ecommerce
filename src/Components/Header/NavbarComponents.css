@@ -1,0 +1,30 @@
+.navbarheading {
+  color: white;
+
+  position: absolute;
+  left: 500px;
+  bottom: 3px;
+  font-family: serif;
+}
+.navbar {
+  position: relative;
+  height: 50px;
+  position: fixed;
+  width: 100%;
+}
+.navbarstore {
+  color: white;
+
+  position: absolute;
+  left: 600px;
+  bottom: 3px;
+  font-family: serif;
+}
+.navbarabout {
+  color: white;
+
+  position: absolute;
+  left: 700px;
+  bottom: 3px;
+  font-family: serif;
+}

@@ -1,0 +1,28 @@
+.itemcard {
+  text-align: center;
+}
+.itemtitle {
+  text-align: center;
+  margin-top: 10px;
+}
+.itemimg {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.itemimg img {
+  width: 100%;
+  transition: 0.5s all ease-in-out;
+}
+.itemimg img:hover {
+  transform: scale(1.5);
+}
+.itemprice {
+  text-align: left;
+  margin-top: 10px;
+}
+.add_to_cart {
+  position: relative;
+  left: 220px;
+}

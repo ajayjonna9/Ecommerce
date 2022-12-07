@@ -1,0 +1,13 @@
+.headerheading {
+  position: absolute;
+  top: 52px;
+  width: 100%;
+  height: 200px;
+  background-color: gray;
+  text-align: center;
+}
+.headerheading h1 {
+  font-size: 8vw;
+  color: white;
+  padding-bottom: 50px;
+}

@@ -1,0 +1,10 @@
+.itemdetails {
+  position: absolute;
+  top: 300px;
+  width: 60%;
+  left: 300px;
+}
+.itemheading {
+  text-align: center;
+  padding: 20px;
+}
