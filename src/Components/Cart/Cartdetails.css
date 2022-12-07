@@ -1,0 +1,36 @@
+.cart_card {
+  /* top: 50px; */
+  /* right: 10px; */
+  /* position: relative; */
+  position: relative;
+  top: 290px;
+  width: 600px;
+  left: 720px;
+}
+.cart_image {
+  height: 80px;
+  width: 80px;
+  border-radius: 5px;
+}
+.cart_item_title {
+  margin-left: 15px;
+}
+.cart_close {
+  position: absolute;
+  margin: 20px;
+  right: 10px;
+  top: 15px;
+  border: 1px solid !important;
+}
+.cart_heading {
+  text-align: center;
+  margin-top: 50px;
+  position: relative;
+}
+.purchase_btn {
+  text-align: center;
+  position: relative;
+  left: 250px;
+  background-color: skyblue;
+  font-weight: bold;
+}
