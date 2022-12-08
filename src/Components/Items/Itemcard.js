@@ -6,15 +6,15 @@ import Contex from "../Store/Contex";
 const Itemcard = (props) => {
   const cartvalues = useContext(Contex);
   const addToCart = (e) => {
+    e.preventDefault();
     const obj = {
+      id: props.id,
       title: props.title,
       imgurl: props.imgurl,
       price: props.price,
-      quantity: 1,
+      quantity: Number(1),
     };
     cartvalues.addItem(obj);
-    console.log(obj);
-    console.log(cartvalues.items);
   };
   return (
     <div className="itemcard ">

@@ -1,6 +1,7 @@
 const ItemArr = [
   {
     title: "Colors",
+    id: "I1",
 
     price: 100,
 
@@ -8,6 +9,7 @@ const ItemArr = [
   },
 
   {
+    id: "I2",
     title: "Black and white Colors",
 
     price: 50,
@@ -16,6 +18,7 @@ const ItemArr = [
   },
 
   {
+    id: "I3",
     title: "Yellow and Black Colors",
 
     price: 70,
@@ -24,6 +27,7 @@ const ItemArr = [
   },
 
   {
+    id: "I4",
     title: "Blue Color",
 
     price: 100,

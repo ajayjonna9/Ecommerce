@@ -7,7 +7,10 @@ import Contex from "../Store/Contex";
 const Cart = () => {
   const [isCartOpen, setCartOpen] = useState(false);
   const cartvalues = useContext(Contex);
-  const noOfItems = cartvalues.items.length;
+  let noOfItems = 0;
+  cartvalues.items.forEach((item) => {
+    noOfItems = noOfItems + item.quantity;
+  });
   const onclickcart = (e) => {
     setCartOpen(true);
   };

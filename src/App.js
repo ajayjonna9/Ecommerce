@@ -1,17 +1,17 @@
 import "./App.css";
-import Header from "./Components/Header/Header";
-import ItemDetails from "./Components/Items/ItemDetails";
-import ContexProvider from "./Components/Store/ContexProvider";
+
+import { Route, Routes } from "react-router-dom";
+import Store from "./Components/Storepage/Store";
+import About from "./Components/About/About";
 
 function App() {
   return (
-    <>
-      <ContexProvider>
-        <Header />
-
-        <ItemDetails />
-      </ContexProvider>
-    </>
+    <div>
+      <Routes>
+        <Route path="/" element={<Store />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </div>
   );
 }
 

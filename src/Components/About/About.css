@@ -1,0 +1,18 @@
+.aboutHeading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.aboutpage {
+  position: absolute;
+  top: 300px;
+  left: 200px;
+  width: 70%;
+}
+.about {
+}
+.aboutImg {
+  float: left;
+  height: 250px;
+  margin-right: 40px;
+}

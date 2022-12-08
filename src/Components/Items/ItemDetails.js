@@ -12,7 +12,9 @@ const ItemDetails = () => {
           {ItemArr.map((item) => {
             return (
               <Itemcard
-                className="col "
+                className="col"
+                key={item.id}
+                id={item.id}
                 title={item.title}
                 price={item.price}
                 imgurl={item.imageUrl}

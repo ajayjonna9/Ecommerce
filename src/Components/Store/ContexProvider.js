@@ -3,13 +3,28 @@ import Contex from "./Contex";
 
 const ContexProvider = (props) => {
   const [cartValues, setCartValues] = useState([]);
-  console.log("contexprovider");
-
+  console.log("2");
   const addItemToCart = (item) => {
-    console.log("hello");
+    console.log("0");
     setCartValues((pre) => {
-      console.log(item);
-      return [...pre, item];
+      console.log("1");
+
+      const indexOfItem = pre.findIndex((preind) => {
+        return item.id === preind.id;
+      });
+      const element = pre[indexOfItem];
+
+      if (element) {
+        let newelement = {
+          ...element,
+          quantity: element.quantity + item.quantity,
+        };
+        pre[indexOfItem] = newelement;
+
+        return [...pre];
+      } else {
+        return [...pre, item];
+      }
     });
   };
   const removeItemToCart = (id) => {};
