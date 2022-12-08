@@ -4,15 +4,6 @@ import Itemcard from "./Itemcard";
 import "./itemdetails.css";
 
 const ItemDetails = () => {
-  const itemdetails = ItemArr.map((item) => {
-    return (
-      <Itemcard
-        title={item.title}
-        price={item.price}
-        imgurl={item.imageUrl}
-      ></Itemcard>
-    );
-  });
   return (
     <div className="itemdetails">
       <h1 className="itemheading">MUSIC</h1>

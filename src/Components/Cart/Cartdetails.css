@@ -1,11 +1,9 @@
 .cart_card {
-  /* top: 50px; */
-  /* right: 10px; */
-  /* position: relative; */
-  position: relative;
-  top: 290px;
+  position: absolute !important;
   width: 600px;
-  left: 720px;
+  top: 50px;
+  right: 10px;
+  z-index: 100;
 }
 .cart_image {
   height: 80px;
@@ -28,9 +26,21 @@
   position: relative;
 }
 .purchase_btn {
-  text-align: center;
   position: relative;
   left: 250px;
-  background-color: skyblue;
+  background-color: skyblue !important;
   font-weight: bold;
+  width: 100px;
+  margin: 20px;
+}
+.cart_quantity {
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  border: 1px solid skyblue;
+  margin-right: 20px;
+}
+.card_body {
+  max-height: 400px;
+  overflow: scroll;
 }

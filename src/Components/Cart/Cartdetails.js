@@ -27,23 +27,42 @@ const Cartdetails = (props) => {
 
       quantity: 3,
     },
-
     {
-      title: "Yellow and Black Colors",
+      title: "Black and white Colors",
 
-      price: 70,
+      price: 50,
 
       imageUrl:
-        "https://prasadyash2411.github.io/ecom-website/img/Album%203.png",
+        "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
 
-      quantity: 1,
+      quantity: 3,
+    },
+    {
+      title: "Black and white Colors",
+
+      price: 50,
+
+      imageUrl:
+        "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
+
+      quantity: 3,
+    },
+    {
+      title: "Black and white Colors",
+
+      price: 50,
+
+      imageUrl:
+        "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
+
+      quantity: 3,
     },
   ];
   return (
     <Card className="cart_card">
       <CloseButton className="cart_close" onClick={onCartClose} />
       <h2 className="cart_heading">Cart</h2>
-      <Card.Body>
+      <Card.Body className="card_body">
         <Table>
           <thead>
             <tr>
@@ -66,7 +85,7 @@ const Cartdetails = (props) => {
                   </th>
                   <th>{item.price}</th>
                   <th>
-                    <span>{item.quantity} </span>
+                    <span className="cart_quantity">{item.quantity} </span>
                     <Button variant="danger">Remove</Button>
                   </th>
                 </tr>
@@ -74,8 +93,9 @@ const Cartdetails = (props) => {
             })}
           </tbody>
         </Table>
-        <Button className="purchase_btn">Purchase</Button>
       </Card.Body>
+
+      <Button className="purchase_btn">Purchase</Button>
     </Card>
   );
 };
