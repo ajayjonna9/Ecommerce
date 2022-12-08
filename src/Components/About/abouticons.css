@@ -1,0 +1,11 @@
+.footerIcons {
+  display: inline-block;
+  position: absolute;
+  /* left: 600px; */
+  right: 200px;
+  top: 50px;
+}
+
+.fa-brands {
+  margin-left: 50px;
+}

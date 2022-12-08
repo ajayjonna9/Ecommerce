@@ -1,0 +1,20 @@
+.toursdate {
+  margin-right: 100px;
+  width: 20%;
+}
+.toursplace {
+  margin-right: 100px;
+  width: 20%;
+}
+.tourscity {
+  margin-right: 100px;
+  width: 20%;
+}
+.buytickets {
+  width: 200px;
+  margin-bottom: 10px;
+}
+.tourdetails {
+  border-bottom: 1px solid;
+  margin: 20px;
+}
