@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <div>
       <Navbars></Navbars>
-      <Cart />
+
       <Headerheading />
     </div>
   );

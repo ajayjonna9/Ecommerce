@@ -27,6 +27,13 @@ const Navbars = () => {
         <NavLink to="/about" activeStyle={activestyle} className="navbarabout ">
           About
         </NavLink>
+        <NavLink
+          to="/contactus"
+          activeStyle={activestyle}
+          className="navbarcontact "
+        >
+          ContactUs
+        </NavLink>
         <Cart />
       </Navbar>
     </div>
