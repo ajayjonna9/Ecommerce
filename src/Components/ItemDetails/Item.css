@@ -1,0 +1,31 @@
+.smallimg {
+  display: inline-block;
+  position: relative;
+  bottom: 20px;
+}
+
+.mainImg {
+  display: inline-block;
+  position: relative;
+  top: 150px;
+  left: 20px;
+  height: 350px;
+  top: 90px;
+  z-index: 100;
+}
+
+.itemdes {
+  display: inline-block !important;
+  width: 50%;
+  margin-left: 50px;
+  /* margin-top: 30px; */
+  position: relative;
+  top: 50px;
+}
+.itemdescription {
+  text-align: center;
+}
+.itemdetailsbody {
+  background-color: skyblue;
+  height: 100vh;
+}

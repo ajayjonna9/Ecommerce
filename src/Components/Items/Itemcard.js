@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import "./itemcard.css";
 import { Button } from "react-bootstrap";
 import Contex from "../Store/Contex";
+import { Link } from "react-router-dom";
 
 const Itemcard = (props) => {
   const cartvalues = useContext(Contex);
@@ -19,9 +20,11 @@ const Itemcard = (props) => {
   return (
     <div className="itemcard ">
       <h4 className="itemtitle">{props.title}</h4>
-      <div className="itemimg">
-        <img src={props.imgurl} className=" m-auto" alt={props.title}></img>
-      </div>
+      <Link to={"/" + props.id}>
+        <div className="itemimg">
+          <img src={props.imgurl} className=" m-auto" alt={props.title}></img>
+        </div>
+      </Link>
       <p className="itemprice">
         ${props.price}{" "}
         <Button className="add_to_cart" onClick={addToCart}>
