@@ -2,7 +2,7 @@
   color: white;
 
   position: absolute;
-  left: 500px;
+  right: 770px;
   bottom: 3px;
   font-family: serif;
 }
@@ -16,7 +16,7 @@
   color: white;
 
   position: absolute;
-  left: 600px;
+  right: 670px;
   bottom: 3px;
   font-family: serif;
 }
@@ -24,7 +24,7 @@
   color: white;
 
   position: absolute;
-  left: 700px;
+  right: 570px;
   bottom: 3px;
   font-family: serif;
 }
@@ -32,15 +32,31 @@
   color: white;
 
   position: absolute;
-  left: 800px;
+  right: 450px;
   bottom: 3px;
   font-family: serif;
 }
 .navbarlogin {
   color: white;
-
   position: absolute;
-  left: 900px;
+  right: 300px;
   bottom: 3px;
   font-family: serif;
+  /* color: skyblue; */
+  border: 1px solid skyblue;
+  border-radius: 5px;
+  width: 50px;
+  text-align: center;
+  background-color: skyblue;
+}
+.logoutbtn {
+  color: white;
+
+  position: absolute;
+  right: 200px;
+  bottom: 3px;
+  font-family: serif;
+  border: 1px solid skyblue;
+  background-color: skyblue;
+  border-radius: 5px;
 }

@@ -1,63 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Card, Table, Button, CloseButton } from "react-bootstrap";
 import "./Cartdetails.css";
+import Contex from "../Store/Contex";
 const Cartdetails = (props) => {
+  const contextval = useContext(Contex);
+
   const onCartClose = (e) => {
     props.oncartclose(false);
   };
-  const arr = [
-    {
-      title: "Colors",
+  let total = 0;
+  contextval.items.forEach((element) => {
+    total = total + Number(element.price) * Number(element.quantity);
+    console.log(total);
+  });
 
-      price: 100,
-
-      imageUrl:
-        "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
-
-      quantity: 2,
-    },
-
-    {
-      title: "Black and white Colors",
-
-      price: 50,
-
-      imageUrl:
-        "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
-
-      quantity: 3,
-    },
-    {
-      title: "Black and white Colors",
-
-      price: 50,
-
-      imageUrl:
-        "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
-
-      quantity: 3,
-    },
-    {
-      title: "Black and white Colors",
-
-      price: 50,
-
-      imageUrl:
-        "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
-
-      quantity: 3,
-    },
-    {
-      title: "Black and white Colors",
-
-      price: 50,
-
-      imageUrl:
-        "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
-
-      quantity: 3,
-    },
-  ];
   return (
     <Card className="cart_card">
       <CloseButton className="cart_close" onClick={onCartClose} />
@@ -72,12 +28,12 @@ const Cartdetails = (props) => {
             </tr>
           </thead>
           <tbody>
-            {arr.map((item) => {
+            {contextval.items.map((item) => {
               return (
                 <tr>
                   <th>
                     <img
-                      src={item.imageUrl}
+                      src={item.imgurl}
                       alt="item"
                       className="cart_image"
                     ></img>
@@ -95,6 +51,8 @@ const Cartdetails = (props) => {
         </Table>
       </Card.Body>
 
+      <h5 className="carttotal">Total</h5>
+      <h5 className="carttotalnumber">$ {total}</h5>
       <Button className="purchase_btn">Purchase</Button>
     </Card>
   );

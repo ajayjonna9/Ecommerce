@@ -44,3 +44,14 @@
   max-height: 400px;
   overflow: scroll;
 }
+.carttotal {
+  margin: 10px;
+  display: inline-block;
+}
+.carttotalnumber {
+  left: 480px;
+  display: inline !important;
+  position: absolute;
+  bottom: 80px;
+  color: green;
+}

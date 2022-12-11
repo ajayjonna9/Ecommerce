@@ -1,13 +1,21 @@
 import React, { useContext } from "react";
 import "./NavbarComponents.css";
 import { Navbar, Nav } from "react-bootstrap";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import Cart from "../Cart/Cart";
 import Contex from "../Store/Contex";
 
 const Navbars = () => {
   const contexVal = useContext(Contex);
+  const navigate = useNavigate();
   const activestyle = { color: "green" };
+  const onLogout = () => {
+    contexVal.logout();
+    navigate("/");
+  };
+  const onLogin = () => {
+    navigate("/login");
+  };
   return (
     <div>
       <Navbar bg="dark" variant="dark" className="navbar" fixed="top">
@@ -33,13 +41,14 @@ const Navbars = () => {
           ContactUs
         </NavLink>
         {!contexVal.isLogin && (
-          <NavLink
-            to="/login"
-            activeStyle={activestyle}
-            className="navbarlogin "
-          >
+          <button onClick={onLogin} className="navbarlogin">
             Login
-          </NavLink>
+          </button>
+        )}
+        {contexVal.isLogin && (
+          <button onClick={onLogout} className="logoutbtn">
+            Logout
+          </button>
         )}
 
         <Cart />

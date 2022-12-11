@@ -11,11 +11,16 @@
   padding: 30px;
   width: 400px;
   background-color: wheat;
-  position: relative;
+  /* position: relative;
   top: 200px;
-  left: 450px;
+  left: 450px; */
   border-radius: 10px;
 }
-.form button {
+.form button[type="submit"] {
   margin: 20px;
+}
+.togglebutton {
+  width: 300px;
+  border: 0px solid;
+  background: wheat;
 }

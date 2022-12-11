@@ -13,6 +13,7 @@ const Cart = () => {
   });
   const onclickcart = (e) => {
     setCartOpen(true);
+    console.log(cartvalues.items);
   };
   return (
     <>

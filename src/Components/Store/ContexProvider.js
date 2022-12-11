@@ -3,14 +3,13 @@ import Login from "../LoginPage/Login";
 import Contex from "./Contex";
 
 const ContexProvider = (props) => {
+  const localStorageToken = localStorage.getItem("token");
+  const [email, setEmail] = useState("");
   const [cartValues, setCartValues] = useState([]);
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useState(localStorageToken);
 
   const addItemToCart = (item) => {
-    console.log("0");
     setCartValues((pre) => {
-      console.log("1");
-
       const indexOfItem = pre.findIndex((preind) => {
         return item.id === preind.id;
       });
@@ -29,12 +28,28 @@ const ContexProvider = (props) => {
       }
     });
   };
-  const Login = (token) => {
+  const addCrudItems = (item) => {
+    item.forEach((element) => {
+      addItemToCart(element);
+    });
+  };
+  const Login = (token, mail) => {
     setToken(token);
+    const RegEx = /^[a-z0-9]+$/i;
+    let newMail = "";
+    for (let i = 0; i < mail.length; i++) {
+      if (RegEx.test(mail[i])) {
+        newMail = newMail + mail[i];
+      }
+    }
+    setEmail(newMail);
+
     localStorage.setItem("token", token);
   };
   const Logout = () => {
     setToken(null);
+    localStorage.removeItem("token");
+    setCartValues([]);
   };
   const removeItemToCart = (id) => {};
   const contexValues = {
@@ -45,6 +60,8 @@ const ContexProvider = (props) => {
     isLogin: !!token,
     login: Login,
     logout: Logout,
+    mail: email,
+    addcruditems: addCrudItems,
   };
   return (
     <Contex.Provider value={contexValues}>{props.children}</Contex.Provider>

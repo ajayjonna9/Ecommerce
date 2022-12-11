@@ -7,8 +7,10 @@ const Contex = React.createContext({
 
   token: "",
   isLogin: false,
-  login: (token) => {},
+  login: (token, mail) => {},
   logout: () => {},
+  mail: "",
+  addcruditems: (item) => {},
 });
 
 export default Contex;

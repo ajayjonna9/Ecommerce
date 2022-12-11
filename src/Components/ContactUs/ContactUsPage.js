@@ -23,26 +23,47 @@ const ContactUsPage = () => {
         obj
       );
       console.log(res);
+      alert("We Will Contact Soon");
     } catch (err) {
       console.log(err);
+      alert("Somthing went wrong");
     }
   };
   return (
     <div className="contactpage">
-      <Form onSubmit={onsubmit} className="form">
-        <Form.Label>Name</Form.Label>
-        <Form.Control type="text" placeholder="Enter Name" ref={name} />
+      <div className="d-flex flex-column align-items-center p-5">
+        <h2 className="mb-5">Contact Us</h2>
+        <Form onSubmit={onsubmit} className="form">
+          <Form.Label>Name</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Enter Name"
+            ref={name}
+            required
+          />
 
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" ref={email} />
+          <Form.Label>Email address</Form.Label>
+          <Form.Control
+            type="email"
+            placeholder="Enter email"
+            ref={email}
+            required
+          />
 
-        <Form.Label>PhoneNo</Form.Label>
-        <Form.Control type="tel" placeholder="Enter PhoneNo" ref={phno} />
+          <Form.Label>PhoneNo</Form.Label>
+          <Form.Control
+            type="tel"
+            placeholder="Enter PhoneNo"
+            pattern="[0-9]{10}"
+            ref={phno}
+            required
+          />
 
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
-      </Form>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Form>
+      </div>
     </div>
   );
 };
