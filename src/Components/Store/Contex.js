@@ -4,8 +4,11 @@ const Contex = React.createContext({
   items: [],
   addItem: (item) => {},
   removeItem: (id) => {},
-  it: [],
-  he: "ndda",
+
+  token: "",
+  isLoggin: false,
+  login: (token) => {},
+  logout: () => {},
 });
 
 export default Contex;

@@ -34,6 +34,9 @@ const Navbars = () => {
         >
           ContactUs
         </NavLink>
+        <NavLink to="/login" activeStyle={activestyle} className="navbarlogin ">
+          Login
+        </NavLink>
         <Cart />
       </Navbar>
     </div>
