@@ -1,11 +1,21 @@
 .contactpage {
-  text-align: center;
-  width: 50%;
+  /* align-items: center; */
+  /* align-content: center; */
   background-color: skyblue;
-  position: relative;
-  top: 200px;
-  left: 300px;
-  border-radius: 10px;
+  height: 100vh;
 }
 .forminput {
+}
+.form {
+  text-align: center;
+  padding: 30px;
+  width: 400px;
+  background-color: wheat;
+  position: relative;
+  top: 200px;
+  left: 450px;
+  border-radius: 10px;
+}
+.form button {
+  margin: 20px;
 }

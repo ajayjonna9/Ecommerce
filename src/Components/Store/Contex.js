@@ -6,7 +6,7 @@ const Contex = React.createContext({
   removeItem: (id) => {},
 
   token: "",
-  isLoggin: false,
+  isLogin: false,
   login: (token) => {},
   logout: () => {},
 });

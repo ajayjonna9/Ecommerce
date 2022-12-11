@@ -29,7 +29,7 @@ const ContactUsPage = () => {
   };
   return (
     <div className="contactpage">
-      <Form onSubmit={onsubmit}>
+      <Form onSubmit={onsubmit} className="form">
         <Form.Label>Name</Form.Label>
         <Form.Control type="text" placeholder="Enter Name" ref={name} />
 

@@ -5,6 +5,7 @@ import Contex from "../Store/Contex";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import "../ContactUs/contactpage.css";
 
 const LoginForm = () => {
   const password = useRef("");
@@ -40,19 +41,19 @@ const LoginForm = () => {
   };
   return (
     <div className="contactpage">
-      <Form onSubmit={onsubmit}>
-        <Form.Label>Name</Form.Label>
-        <Form.Control type="email" placeholder="Enter Name" ref={email} />
+      <Form onSubmit={onsubmit} className="form">
+        <Form.Label>Email</Form.Label>
+        <Form.Control type="email" placeholder="Enter Email" ref={email} />
 
-        <Form.Label>Email address</Form.Label>
+        <Form.Label>Password</Form.Label>
         <Form.Control
           type="password"
-          placeholder="Enter email"
+          placeholder="Enter Password"
           ref={password}
         />
 
         <Button variant="primary" type="submit">
-          Submit
+          Login
         </Button>
       </Form>
     </div>

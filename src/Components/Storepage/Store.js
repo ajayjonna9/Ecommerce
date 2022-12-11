@@ -5,11 +5,11 @@ import ContexProvider from "../Store/ContexProvider";
 
 const Store = () => {
   return (
-    <ContexProvider>
+    <>
       <Header />
 
       <ItemDetails />
-    </ContexProvider>
+    </>
   );
 };
 
