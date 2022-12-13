@@ -1,5 +1,9 @@
 .itemcard {
   text-align: center;
+  border: 1px solid skyblue;
+  margin: 10px;
+  width: 45%;
+  width: 370px !important;
 }
 .itemtitle {
   text-align: center;
@@ -25,5 +29,5 @@
 }
 .add_to_cart {
   position: relative;
-  left: 220px;
+  left: 200px;
 }

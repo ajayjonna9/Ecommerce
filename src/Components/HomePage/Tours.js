@@ -9,7 +9,12 @@ const Tours = () => {
       <h3 className="toursheader">Tours</h3>
       {ToursData.map((item) => {
         return (
-          <ToursDetails date={item.date} city={item.city} place={item.place} />
+          <ToursDetails
+            key={item.id}
+            date={item.date}
+            city={item.city}
+            place={item.place}
+          />
         );
       })}
     </div>

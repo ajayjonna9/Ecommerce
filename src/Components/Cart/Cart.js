@@ -1,8 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useCallback } from "react";
 import "./Cart.css";
 import { Button } from "react-bootstrap";
 import Cartdetails from "./Cartdetails";
 import Contex from "../Store/Contex";
+import CartOverlay from "./CartOverlay";
 
 const Cart = () => {
   const [isCartOpen, setCartOpen] = useState(false);
@@ -11,10 +12,13 @@ const Cart = () => {
   cartvalues.items.forEach((item) => {
     noOfItems = noOfItems + item.quantity;
   });
-  const onclickcart = (e) => {
-    setCartOpen(true);
-    console.log(cartvalues.items);
-  };
+  const onclickcart = useCallback(
+    (e) => {
+      setCartOpen(true);
+      console.log(cartvalues.items);
+    },
+    [isCartOpen]
+  );
   return (
     <>
       <Button className="cart" variant="outline-primary" onClick={onclickcart}>
@@ -22,6 +26,7 @@ const Cart = () => {
       </Button>
 
       <span className="cart_item_number">{noOfItems}</span>
+
       {isCartOpen && <Cartdetails oncartclose={setCartOpen} />}
     </>
   );

@@ -7,7 +7,7 @@ import Footer from "../About/Footer";
 
 const Home = () => {
   return (
-    <div>
+    <div className="d-flex flex-column">
       <Navbars />
       <Homeheading />
       <Tours />

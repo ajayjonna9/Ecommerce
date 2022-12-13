@@ -7,6 +7,7 @@
   color: white !important;
   text-align: center;
   font-family: serif !important;
+  bottom: 5px;
 }
 .cart_item_number {
   position: absolute;

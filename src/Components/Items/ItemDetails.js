@@ -21,9 +21,9 @@ const ItemDetails = () => {
   }, []);
   return (
     <div className="itemdetails">
-      <h1 className="itemheading">MUSIC</h1>
+      <h1 className="itemheading">MOBILE PHONES</h1>
       <div className="container">
-        <div className="row row-cols-2 ">
+        <div className="row row-cols-2 gx-4 gy-4 ">
           {itemArr.map((item) => {
             return (
               <Itemcard

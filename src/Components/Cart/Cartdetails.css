@@ -9,9 +9,16 @@
   height: 80px;
   width: 80px;
   border-radius: 5px;
+
+  border: 1px solid skyblue;
 }
 .cart_item_title {
   margin-left: 15px;
+  display: inline-block;
+  /* text-align: center; */
+  height: 50px !important;
+  width: 90px;
+  text-align: center;
 }
 .cart_close {
   position: absolute;
@@ -39,6 +46,7 @@
   text-align: center;
   border: 1px solid skyblue;
   margin-right: 20px;
+  margin-top: 20px;
 }
 .card_body {
   max-height: 400px;
@@ -54,4 +62,23 @@
   position: absolute;
   bottom: 80px;
   color: green;
+}
+.cart_inc_dec {
+  width: 35px;
+  height: 35px;
+  background: white;
+  border-radius: 5px;
+  margin-right: 10px;
+  border: 1px solid red;
+  color: red;
+  text-align: center;
+  font-weight: 100px;
+
+  font-size: larger;
+}
+.removebtn {
+  margin-left: 40px;
+}
+.cartItemPrice {
+  margin-top: 20px;
 }

@@ -1,16 +1,38 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import ItemImg from "./ItemImg";
 import "./Item.css";
 import ReactImageMagnify from "react-image-magnify";
+import { Button } from "react-bootstrap";
+import Add from "../Crud/Add";
+import Contex from "../Store/Contex";
+import Navbars from "../Header/Navbars";
 
 const Item = () => {
   const { items: id } = useParams();
+  const cartvalues = useContext(Contex);
   console.log(useParams());
   const [imgArr, setImgArr] = useState([]);
   const [image, setImage] = useState("");
   const [data, setData] = useState([]);
+  const addToCart = useCallback(
+    (e) => {
+      e.preventDefault();
+      const obj = {
+        id: data.id,
+        title: data.title,
+        imgurl: data.thumbnail,
+        price: data.price,
+        quantity: Number(1),
+      };
+      cartvalues.addItem(obj);
+      Add(obj, cartvalues.mail);
+
+      console.log(cartvalues.mail);
+    },
+    [data, cartvalues.mail]
+  );
   useEffect(() => {
     async function getData() {
       try {
@@ -28,19 +50,15 @@ const Item = () => {
     getData();
   }, []);
 
-  const setimageOnScreen = (img, ind, htyr, e) => {
+  const setimageOnScreen = (img, ind, e) => {
     setImage(img);
     console.log(imgComponent);
-    e.currentTarget.classList.add("imgclick");
-    for (let i of imgComponent) {
-      if (i.props.index !== ind) {
-      }
-    }
   };
   const imgComponent = imgArr.map((img, ind) => {
     return (
       <ItemImg
         img={img}
+        key={ind}
         setimage={setimageOnScreen}
         index={ind}
         imgarr={imgArr}
@@ -50,6 +68,7 @@ const Item = () => {
 
   return (
     <div className="itemdetailsbody">
+      <Navbars />
       <div className="smallimg">
         <div className="d-flex flex-column ">{imgComponent}</div>
       </div>
@@ -82,6 +101,9 @@ const Item = () => {
         <h6 className="itemdescriptio">{data.description}</h6>
         <h4>$ {data.price}</h4>
         <h4>Rating {data.rating}</h4>
+        <Button className="addtocart" onClick={addToCart}>
+          Add to Cart
+        </Button>
       </div>
     </div>
   );

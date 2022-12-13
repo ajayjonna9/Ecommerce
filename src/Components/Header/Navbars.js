@@ -19,39 +19,49 @@ const Navbars = () => {
   return (
     <div>
       <Navbar bg="dark" variant="dark" className="navbar" fixed="top">
-        {/* <h5 className="navbarheading "></h5> */}
-        <NavLink to="/" activeStyle={activestyle} className="navbarheading ">
-          Home
-        </NavLink>
+        <div className="d-flex flex-row">
+          {/* <h5 className="navbarheading "></h5> */}
+          <NavLink to="/" activeStyle={activestyle} className="navbarheading ">
+            Home
+          </NavLink>
 
-        {/* <h5 className="navbarstore"></h5> */}
+          {/* <h5 className="navbarstore"></h5> */}
 
-        <NavLink to="/store" activeStyle={activestyle} className="navbarstore">
-          Store
-        </NavLink>
-        {/* <h5 className="navbarabout "></h5> */}
-        <NavLink to="/about" activeStyle={activestyle} className="navbarabout ">
-          About
-        </NavLink>
-        <NavLink
-          to="/contactus"
-          activeStyle={activestyle}
-          className="navbarcontact "
-        >
-          ContactUs
-        </NavLink>
-        {!contexVal.isLogin && (
-          <button onClick={onLogin} className="navbarlogin">
-            Login
-          </button>
-        )}
-        {contexVal.isLogin && (
-          <button onClick={onLogout} className="logoutbtn">
-            Logout
-          </button>
-        )}
+          <NavLink
+            to="/store"
+            activeStyle={activestyle}
+            className="navbarstore"
+          >
+            Store
+          </NavLink>
+          {/* <h5 className="navbarabout "></h5> */}
+          <NavLink
+            to="/about"
+            activeStyle={activestyle}
+            className="navbarabout "
+          >
+            About
+          </NavLink>
+          <NavLink
+            to="/contactus"
+            activeStyle={activestyle}
+            className="navbarcontact "
+          >
+            ContactUs
+          </NavLink>
+          {!contexVal.isLogin && (
+            <button onClick={onLogin} className="navbarlogin">
+              Login
+            </button>
+          )}
+          {contexVal.isLogin && (
+            <button onClick={onLogout} className="logoutbtn">
+              Logout
+            </button>
+          )}
 
-        <Cart />
+          <Cart />
+        </div>
       </Navbar>
     </div>
   );

@@ -1,7 +1,9 @@
-import React, { useContext } from "react";
+import React, { useCallback, useContext } from "react";
 import { Card, Table, Button, CloseButton } from "react-bootstrap";
 import "./Cartdetails.css";
 import Contex from "../Store/Contex";
+import Cartitems from "./Cartitems";
+import CartOverlay from "./CartOverlay";
 const Cartdetails = (props) => {
   const contextval = useContext(Contex);
 
@@ -30,21 +32,14 @@ const Cartdetails = (props) => {
           <tbody>
             {contextval.items.map((item) => {
               return (
-                <tr>
-                  <th>
-                    <img
-                      src={item.imgurl}
-                      alt="item"
-                      className="cart_image"
-                    ></img>
-                    <span className="cart_item_title ">{item.title}</span>
-                  </th>
-                  <th>{item.price}</th>
-                  <th>
-                    <span className="cart_quantity">{item.quantity} </span>
-                    <Button variant="danger">Remove</Button>
-                  </th>
-                </tr>
+                <Cartitems
+                  id={item.id}
+                  key={item.id}
+                  imgurl={item.imgurl}
+                  title={item.title}
+                  price={item.price}
+                  quantity={item.quantity}
+                />
               );
             })}
           </tbody>

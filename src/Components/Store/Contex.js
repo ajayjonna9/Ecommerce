@@ -4,7 +4,7 @@ const Contex = React.createContext({
   items: [],
   addItem: (item) => {},
   removeItem: (id) => {},
-
+  removeentireItem: (id) => {},
   token: "",
   isLogin: false,
   login: (token, mail) => {},

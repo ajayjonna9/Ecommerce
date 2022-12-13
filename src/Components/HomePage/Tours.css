@@ -1,9 +1,8 @@
 .tours {
-  position: absolute;
-  top: 400px;
-  left: 300px;
+  width: 800px;
+  margin: auto;
 }
 .toursheader {
   text-align: center;
-  margin: 50px;
+  margin: 100px;
 }

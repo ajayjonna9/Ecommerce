@@ -1,10 +1,12 @@
-import React, { useState } from "react";
-import Login from "../LoginPage/Login";
+import React, { useEffect, useState } from "react";
+
 import Contex from "./Contex";
+import axios from "axios";
 
 const ContexProvider = (props) => {
   const localStorageToken = localStorage.getItem("token");
-  const [email, setEmail] = useState("");
+  const localStoragemail = localStorage.getItem("email");
+  const [email, setEmail] = useState(localStoragemail);
   const [cartValues, setCartValues] = useState([]);
   const [token, setToken] = useState(localStorageToken);
 
@@ -27,7 +29,9 @@ const ContexProvider = (props) => {
         return [...pre, item];
       }
     });
+    // addTocrud(item);
   };
+
   const addCrudItems = (item) => {
     item.forEach((element) => {
       addItemToCart(element);
@@ -35,27 +39,74 @@ const ContexProvider = (props) => {
   };
   const Login = (token, mail) => {
     setToken(token);
-    const RegEx = /^[a-z0-9]+$/i;
-    let newMail = "";
-    for (let i = 0; i < mail.length; i++) {
-      if (RegEx.test(mail[i])) {
-        newMail = newMail + mail[i];
-      }
-    }
-    setEmail(newMail);
+
+    setEmail(mail);
 
     localStorage.setItem("token", token);
+    localStorage.setItem("email", mail);
   };
   const Logout = () => {
     setToken(null);
+    setEmail(null);
     localStorage.removeItem("token");
+    localStorage.removeItem("email");
+
     setCartValues([]);
   };
-  const removeItemToCart = (id) => {};
+
+  const removeItemToCart = (id) => {
+    setCartValues((pre) => {
+      const indexOfReducingElement = pre.findIndex((preitem) => {
+        return preitem.id === id;
+      });
+      const reducingElement = pre[indexOfReducingElement];
+      if (reducingElement.quantity > 1) {
+        let updatedElement = {
+          ...reducingElement,
+          quantity: reducingElement.quantity - 1,
+        };
+        pre[indexOfReducingElement] = updatedElement;
+        return [...pre];
+      } else {
+        const newpre = pre.filter((item) => {
+          return item.id !== id;
+        });
+        pre = [...newpre];
+        return [...pre];
+      }
+    });
+  };
+  const removeEntireItem = (id) => {
+    setCartValues((pre) => {
+      const newpre = pre.filter((item) => {
+        return item.id !== id;
+      });
+      pre = [...newpre];
+      return [...pre];
+    });
+  };
+  useEffect(() => {
+    async function getcartitems() {
+      if (email) {
+        try {
+          console.log(email);
+          const crudres = await axios.get(
+            `https://crudcrud.com/api/9cb60ec3cba0469db220fba3e285c813/cart${email}`
+          );
+          console.log("crud", crudres);
+          addCrudItems(crudres.data);
+        } catch (err) {
+          console.log(err);
+        }
+      }
+    }
+    getcartitems();
+  }, []);
   const contexValues = {
     items: cartValues,
     addItem: addItemToCart,
     removeItem: removeItemToCart,
+    removeentireItem: removeEntireItem,
     token: token,
     isLogin: !!token,
     login: Login,

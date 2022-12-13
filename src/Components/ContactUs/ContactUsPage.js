@@ -3,8 +3,10 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "./contactpage.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const ContactUsPage = () => {
+  const navigator = useNavigate();
   const name = useRef("");
   const email = useRef("");
   const phno = useRef("");
@@ -28,6 +30,7 @@ const ContactUsPage = () => {
       console.log(err);
       alert("Somthing went wrong");
     }
+    navigator("/");
   };
   return (
     <div className="contactpage">
